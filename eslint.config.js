@@ -1,3 +1,5 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from 'eslint-plugin-storybook'
 import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
@@ -5,7 +7,15 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist', 'node_modules', '**/*.stories.js']),
+  globalIgnores([
+    'dist',
+    'node_modules',
+    '**/*.stories.js',
+    '.storybook/**',
+    'src/stories/Button.jsx',
+    'src/stories/Header.jsx',
+    'src/stories/Page.jsx',
+  ]),
   {
     files: ['**/*.{js,jsx}'],
     extends: [
@@ -40,4 +50,5 @@ export default defineConfig([
       'max-len': ['error', { code: 120 }],
     },
   },
+  ...storybook.configs['flat/recommended'],
 ])
