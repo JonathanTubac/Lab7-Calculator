@@ -2,6 +2,8 @@
 
 A fully functional calculator built with **React 19** and **Vite**, featuring unit tests with **Vitest** and component documentation with **Storybook**.
 
+
+Test it now: https://lab7-calculator.vercel.app/
 ## Features
 
 - Basic arithmetic: addition, subtraction, multiplication, division
